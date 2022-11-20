@@ -1,0 +1,256 @@
+/////////////////
+/// LOGO
+.logo {
+  height: 3.25rem;
+  margin-left: 2rem;
+}
+
+/////////////////////
+/// SEARCH
+
+.search {
+  flex: 0 0 30%;
+
+  display: flex;
+  align-items: stretch;
+  &__input {
+    width: 80%;
+    height: 3.5rem;
+    background-color: var(--color-grey-light-3);
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    margin-right: -4rem;
+
+    padding: 0.5rem 2rem;
+    font-family: inherit;
+
+    transition: all 0.5s;
+
+    &:focus {
+      width: 100%;
+      height: 4rem;
+      box-shadow: 0 0 6rem rgba(black, 0.3);
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+
+  &__button {
+    background-color: var(--color-grey-light-3);
+    outline: none;
+    border: none;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+/////////////////
+/// NAVIGATION USER
+.user-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-self: stretch;
+  flex: 0 0 20%;
+
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-3);
+  }
+  &__icon-box {
+    display:flex;
+    align-items: center;
+  }
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    fill: var(--color-grey-dark-2);
+    margin-right: .3rem;
+  }
+  &__notifications {
+    color:white;
+    height: 1.8rem;
+    width: 1.8rem;
+    font-size:  1.1rem;
+    border-radius: 100%;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__user-photo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+  }
+  &__user-name {
+    color: black;
+    margin: 0 0.5rem;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+  }
+}
+
+.side-nav{
+
+  margin-top: 2rem;
+
+  &__item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: .5rem;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+
+    transition: transform 0.3s,
+                width 0.3s cubic-bezier(1,0,0,1) 0.3s;
+  }
+
+  &__item:hover::before,
+  &__item--active::before{
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before{
+    background-color: var(--color-primary-light);
+  }
+
+  &__item:not(:last-child){
+    margin-bottom: .5rem;
+  }
+
+  &__item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 0;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+    }
+  }
+
+  &__icon{
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-light-1);
+  }
+
+  &__link, &__link:visited{
+    text-decoration: none;
+    color: var(--color-grey-dark-2);
+    position: absolute;
+  }
+
+  &__text{
+    position: relative;
+    bottom: .5rem;
+    left: 2rem;
+    text-transform: uppercase;
+    color: var(--color-grey-light-1);
+
+  }
+
+}
+
+.legal{
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.gallery{
+  display: flex;
+
+  &__photo{
+    width:100%;
+    display:block;
+  }
+}
+
+/////////////////
+/// OVERVIEW
+
+.overview {
+
+  display: flex;
+  align-items: center;
+  min-height: 6rem;
+  background-color: var(--color-grey-light-3);
+
+  .overview__heading {
+    color: var(--color-grey-dark-2);
+    padding: 0 2rem;
+  }
+
+  .overview__stars {
+
+    margin-right: auto;
+
+    &--icon {
+      height: 2rem;
+      width: 2rem;
+      fill: var(--color-primary);
+    }
+  }
+
+  .overview__location {
+    position:relative;
+    &--icon {
+      height: 2rem;
+      width: 2rem;
+      z-index: 2;
+      fill: var(--color-primary);
+      position: absolute;
+      left: .8rem;
+      top: .5rem;
+    }
+  }
+
+  .overview__rating {
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--color-primary);
+    &--average {
+
+    }
+
+    &--count {
+
+    }
+  }
+
+  .btn-inline {
+    padding: 1rem 2rem 1rem 3rem;
+    border-radius: 5px;
+    border: none;
+    color: var(--color-primary);
+    background-color: var(--color-grey-light-3);
+    text-decoration: underline;
+    text-underline-offset: 2rem;
+  }
+
+}
